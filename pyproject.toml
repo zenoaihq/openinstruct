@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "openinstruct"
 version = "1.1.0"
 description = "Structured outputs for LLMs with 30-70% token savings using TSON optimization"
-readme = "openinstruct/README.md"
+readme = "README.md"
 license = "MIT"
 requires-python = ">=3.9"
 authors = [
@@ -52,10 +52,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/zenoai/openinstruct"
-Repository = "https://github.com/zenoai/openinstruct"
-Documentation = "https://github.com/zenoai/openinstruct#readme"
-Issues = "https://github.com/zenoai/openinstruct/issues"
+Homepage = "https://github.com/zenoaihq/openinstruct"
+Repository = "https://github.com/zenoaihq/openinstruct"
+Documentation = "https://github.com/zenoaihq/openinstruct#readme"
+Issues = "https://github.com/zenoaihq/openinstruct/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["openinstruct"]
