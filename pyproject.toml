@@ -1,0 +1,84 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openinstruct"
+version = "1.1.0"
+description = "Structured outputs for LLMs with 30-70% token savings using TSON optimization"
+readme = "openinstruct/README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "Zeno AI", email = "contact@zenoai.tech" }
+]
+keywords = [
+    "llm",
+    "structured-output",
+    "pydantic",
+    "openai",
+    "anthropic",
+    "gemini",
+    "tson",
+    "token-efficient",
+    "extraction",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "pydantic>=2.0",
+    "httpx>=0.25.0",
+    "tson>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "mypy>=1.0",
+    "ruff>=0.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/zenoai/openinstruct"
+Repository = "https://github.com/zenoai/openinstruct"
+Documentation = "https://github.com/zenoai/openinstruct#readme"
+Issues = "https://github.com/zenoai/openinstruct/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["openinstruct"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "openinstruct/**/*.py",
+    "openinstruct/py.typed",
+    "openinstruct/README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
